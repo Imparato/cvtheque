@@ -1,0 +1,11 @@
+.navbar-cvtheque {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.navbar-cvtheque .navbar-collapse {
+  flex-grow: 0;
+}
