@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :schools
+  has_many :experiences
 
   HAIR = ["Blond", "Brun", "Châtain", "Roux", "Gris", "Blanc"]
   EYES = ["Bleu", "Vert", "Marron", "Gris"]
