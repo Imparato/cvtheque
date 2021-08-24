@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   HAIR = ["Blond", "Brun", "Châtain", "Roux", "Gris", "Blanc"]
-  EYES = ["Bleu", "Vert", "Marron"]
+  EYES = ["Bleu", "Vert", "Marron", "Gris"]
 
   validates :first_name, presence: true, length: { minimum: 3 }
   validates :last_name, presence: true, length: { minimum: 2 }
