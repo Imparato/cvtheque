@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :schools
+
   HAIR = ["Blond", "Brun", "Châtain", "Roux", "Gris", "Blanc"]
   EYES = ["Bleu", "Vert", "Marron", "Gris"]
 
