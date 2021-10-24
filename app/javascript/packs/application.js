@@ -7,17 +7,27 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import Alpine from 'alpinejs'
 import "stylesheets/application.scss"
+
+window.Alpine = Alpine
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+Alpine.start()
 
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
+
+
+
+
+
+
 
 // External imports
 import "bootstrap";
