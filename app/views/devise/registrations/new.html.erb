@@ -1,25 +1,94 @@
-<h2>Sign up</h2>
+<div class="px-4 sm:px-6 md:px-0">
+  <h1 class="text-2xl font-semibold text-gray-900">Créer mon compte</h1>
+</div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="px-4 sm:px-6 md:px-0">
+  <div class="py-4">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    placeholder: 'vous@exemple.com',
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    label: 'Mot de passe',
+                    hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    label: "Confirmez votre mot de passe",
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :first_name,
+                    required: true,
+                    autofocus: true,
+                    label: "Prénom" %>
+        <%= f.input :last_name,
+                    required: true,
+                    autofocus: true,
+                    label: "Nom" %>
+        <%= f.input :birthday,
+                    as: :date,
+                    start_year: Date.today.year - 90,
+                    end_year: Date.today.year,
+                    order: [:day, :month, :year],
+                    required: true,
+                    autofocus: true,
+                    label: "Date de naissance" %>
+        <%= f.input :phone_number,
+                    required: true,
+                    autofocus: true,
+                    label: "Téléphone" %>
+        <%= f.input :address,
+                    required: true,
+                    autofocus: true,
+                    label: "Adresse" %>
+        <%= f.input :postal_code,
+                    required: true,
+                    autofocus: true,
+                    label: "Code postal" %>
+        <%= f.input :city,
+                    required: true,
+                    autofocus: true,
+                    label: "Ville" %>
+        <%= f.input :size,
+                    required: false,
+                    autofocus: true,
+                    label: "Taille" %>
+        <%= f.input :weight,
+                    required: false,
+                    autofocus: true,
+                    label: "Poids" %>
+        <%= f.input :hair_color,
+                    required: false,
+                    autofocus: true,
+                    label: "Couleur de cheveux" %>
+        <%= f.input :eyes_color,
+                    required: false,
+                    autofocus: true,
+                    label: "Couleur des yeux" %>
+        <%= f.input :facebook_url,
+                    required: false,
+                    autofocus: true,
+                    label: "Profil Facebook" %>
+        <%= f.input :linkedin_url,
+                    required: false,
+                    autofocus: true,
+                    label: "Profil Linkedin" %>
+        <%= f.input :instagram_url,
+                    required: false,
+                    autofocus: true,
+                    label: "Profil Instagram" %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Créer mon compte" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
